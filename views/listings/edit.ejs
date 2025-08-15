@@ -1,0 +1,152 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h3 class="mb-4 fw-bold">Edit Your Listing</h3>
+
+      <form 
+        method="POST" 
+        action="/listings/<%= listing._id %>?_method=PUT" 
+        class="needs-validation" 
+        novalidate 
+        enctype="multipart/form-data"
+      >
+
+        <!-- 🏷 Title -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input 
+            id="title"
+            name="listing[title]" 
+            value="<%= listing.title %>" 
+            type="text" 
+            class="form-control" 
+            required
+          />
+          <div class="invalid-feedback">Please enter a title</div>
+        </div>
+
+        <!-- 📝 Description -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea 
+            id="description"
+            name="listing[description]" 
+            class="form-control" 
+            rows="3" 
+            required
+          ><%= listing.description %></textarea>
+          <div class="invalid-feedback">Please enter a short description</div>
+        </div>
+
+        <!-- 🌟 Category -->
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select 
+            id="category" 
+            name="listing[category]" 
+            class="form-select" 
+            required
+          >
+            <option value="" disabled <%= !listing.category ? 'selected' : '' %>>Select a category</option>
+            <% const categories = [
+              "Trending", "Iconic Cities", "Mountains", "Castles", "Amazing Pools",
+              "Camping", "Arctic", "Design Room", "Casa de Beach", "Wavy Islands"
+            ]; %>
+            <% categories.forEach(cat => { %>
+              <option value="<%= cat %>" <%= listing.category === cat ? 'selected' : '' %>><%= cat %></option>
+            <% }) %>
+          </select>
+          <div class="invalid-feedback">Please select a category</div>
+        </div>
+
+        <!-- 🖼 Original Image -->
+        <div class="mb-3">
+          <label class="form-label">Original Listing Image</label><br />
+          <img 
+            src="<%= originalImageUrl %>" 
+            alt="Original Listing Image" 
+            class="img-fluid rounded" 
+            style="max-height: 200px;"
+          />
+        </div>
+
+        <!-- 📤 Upload New Image -->
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload New Image</label>
+          <input 
+            id="image"
+            name="listing[image]"  
+            type="file" 
+            class="form-control"
+          />
+        </div>
+
+        <!-- 💰 Price & Country -->
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input 
+              id="price"
+              name="listing[price]" 
+              value="<%= listing.price %>" 
+              type="number" 
+              class="form-control" 
+              required
+            />
+            <div class="invalid-feedback">Please enter a valid price</div>
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input 
+              id="country"
+              name="listing[country]" 
+              value="<%= listing.country %>" 
+              type="text" 
+              class="form-control" 
+              required
+            />
+            <div class="invalid-feedback">Please enter a valid country</div>
+          </div>
+        </div>
+
+        <!-- 📍 Location -->
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input 
+            id="location"
+            name="listing[location]" 
+            value="<%= listing.location %>" 
+            type="text" 
+            class="form-control" 
+            required
+          />
+          <div class="invalid-feedback">Please enter a valid location</div>
+        </div>
+
+        <!--  Submit Button -->
+        <button class="btn btn-dark mt-3 mb-4">Update Listing</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--  Bootstrap Validation Script -->
+<script>
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>

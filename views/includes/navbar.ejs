@@ -1,0 +1,138 @@
+<style>
+  .search-btn {
+    background-color: #fe424d;
+    color: #fff;
+    border-radius: 25px;
+    padding: 0 1rem;
+  }
+  .search-btn:hover {
+    background-color: #fe424d;
+    color: #fff;
+  }
+  .search-btn i {
+    display: inline;
+    margin-right: 0.5rem;
+  }
+  .search-inp {
+    border-radius: 25px;
+    padding: 0.5rem 3rem;
+    font-size: 1rem;
+  }
+
+  /* 🔧 Mobile Menu Styling */
+  #menuToggle {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 4rem;
+    right: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1050;
+
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+    flex-direction: column;
+  }
+
+  .mobile-menu.show {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 0;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    #menuToggle {
+      display: block;
+    }
+    .navbar-collapse {
+      display: none !important;
+    }
+  }
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+
+    <!-- 🔘 Hamburger Icon -->
+    <button id="menuToggle" class="btn">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- 🔽 Bootstrap Collapse (hidden on mobile) -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <span class="fw-semibold wanderlust navbar-brand d-flex align-items-center me-4" style="color: #fe424d" >WanderLust</span>
+      <a class="navbar-brand d-flex align-items-center me-4" href="/listings">
+        <a class="nav-link" href="/listings">Explore</a>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex">
+          <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations">
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new">List Your Property</a>
+        <% if(!currUser) { %> 
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+        <% if(currUser) { %>
+          <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- 📱 Mobile Menu (Visible only when hamburger clicked) -->
+<div id="mobileMenu" class="mobile-menu">
+  <a href="/listings">Explore</a>
+  <a href="/listings/new">List Your Property</a>
+  <a href="/logout">Log out</a>
+</div>
+
+<!-- 🔧 Toggle Script -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileMenu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove("show");
+      }
+    });
+  });
+</script>

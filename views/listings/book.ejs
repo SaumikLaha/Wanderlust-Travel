@@ -1,0 +1,49 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container mt-5 mb-5">
+  <h2 class="mb-4 fw-bold">Book Your Stay</h2>
+
+  <form action="/listings/<%= listingId %>/book" method="POST" class="needs-validation" novalidate>
+    <div class="mb-3">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control" name="name" id="name" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone Number</label>
+      <input type="tel" class="form-control" name="phone" id="phone" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" name="email" id="email" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="roomType" class="form-label">Room Type</label>
+      <select class="form-select" name="roomType" id="roomType" required>
+        <option value="">Select Room Type</option>
+        <option value="Single">Single</option>
+        <option value="Double">Double</option>
+        <option value="Suite">Suite</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="checkin" class="form-label">Check-In Date</label>
+      <input type="date" class="form-control" name="checkin" id="checkin" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="checkout" class="form-label">Check-Out Date</label>
+      <input type="date" class="form-control" name="checkout" id="checkout" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="guests" class="form-label">Number of Guests</label>
+      <input type="number" class="form-control" name="guests" id="guests" min="1" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Confirm Booking</button>
+  </form>
+</div>

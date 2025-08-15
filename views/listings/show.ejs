@@ -1,0 +1,142 @@
+<% layout("/layouts/boilerplate") %>
+
+<script>
+  const mapToken = "<%= process.env.MAP_TOKEN %>";
+  const listing = <%- JSON.stringify(listing) %>;
+</script>
+
+<div class="container mt-5 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+
+      <!-- 🏷 Listing Heading -->
+      <h2 class="mb-3 fw-bold"><%= listing.title %></h2>
+
+      <!-- 🖼 Listing Image -->
+      <div class="mb-4">
+    <img 
+    src="<%= listing.image.url %>" 
+    alt="listing image"
+    class="img-fluid"
+    style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+    />
+
+      <!-- 👤 Owner Info -->
+      <p class="text-muted mb-2">Owned by <i><%= listing.owner.username %></i> | <b><%= listing.category || "Iconic Cities" %></b></p>
+
+      <!-- 📃 Listing Details -->
+      <p class="text-muted"><%= listing.description %></p>
+      <p><strong>Price:</strong> ₹<%= listing.price.toLocaleString("en-IN") %></p>
+      <p><strong>Location:</strong> <%= listing.location %></p>
+      <p><strong>Country:</strong> <%= listing.country %></p>
+
+      <!-- 🔘 Owner Buttons -->
+      <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
+        <div class="mt-4">
+          <a href="/listings/<%= listing._id %>/edit" class="btn btn-primary me-2">Edit this Listing</a>
+          <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE" class="d-inline">
+            <button class="btn btn-danger">Delete this Listing</button>
+          </form>
+        </div>
+      <% } else { %>
+        <a href="/listings/<%= listing._id %>/book" class="btn btn-success mt-3">Book Now</a>
+      <% } %>
+
+        
+
+
+      <!-- ✍ Review Form -->
+      
+<% if(currUser) { %>
+  <hr />
+  <div class="mb-4">
+    <h4>Leave a Review</h4>
+    <form action="/listings/<%= listing._id %>/reviews" method="POST" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="rating" class="form-label">Rating</label>
+        <fieldset class="starability-slot">
+          <!-- Hidden default input to prevent auto-highlight -->
+          <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="" checked hidden />
+
+          <% for(let i = 1; i <= 5; i++) { %>
+            <input type="radio" id="rate<%= i %>" name="review[rating]" value="<%= i %>" />
+            <label for="rate<%= i %>" title="<%= ['Terrible','Not good','Average','Very good','Amazing'][i-1] %>"><%= i %> star</label>
+          <% } %>
+        </fieldset>
+      </div>
+
+      <div class="mb-3">
+        <label for="comment" class="form-label">Comments</label>
+        <textarea name="review[comment]" id="comment" rows="4" class="form-control" required></textarea>
+        <div class="invalid-feedback">Please add some comments for review</div>
+      </div>
+
+      <button class="btn btn-outline-dark">Submit</button>
+    </form>
+  </div>
+  <hr />
+<% } %>
+
+   <!-- 📝 All Reviews -->
+<% if(listing.reviews.length > 0) { %>
+  <h5 class="mb-3">All Reviews</h5>
+  <div class="row">
+    <% for(let review of listing.reviews) { %>
+      <div class="col-md-5 mb-3 me-3">
+        <div class="card h-100 d-flex flex-column justify-content-between">
+          <div class="card-body pb-2">
+            <h6 class="card-title">@<%= review.author.username %></h6>
+            <p class="starability-result" data-rating="<%= review.rating %>"></p>
+            <p class="card-text mb-3"><%= review.comment %></p>
+          </div>
+
+          <% if(currUser && review.author._id.equals(currUser._id)) { %>
+            <div class="card-footer bg-transparent border-0 text-end pt-0 pb-3 pe-3">
+              <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                <button class="btn btn-sm btn-dark">Delete</button>
+              </form>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+<% } %>
+
+      <!-- 🌍 Map Section -->
+      <div class="mt-5">
+        <h4>Where you'll be</h4>
+        <div id="map" style="height: 300px; border-radius: 10px;"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 🧠 Bootstrap Validation -->
+<script>
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>
+
+<!-- 🗺️ Map Script -->
+<script src="/js/map.js"></script>
+
+<!-- ⭐ Starability CSS -->
+<link rel="stylesheet" href="/css/starability-minified/starability-all.min.css">
+
+<!-- 🎨 Font Awesome -->
+<script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
