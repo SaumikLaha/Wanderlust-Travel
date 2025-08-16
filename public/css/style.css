@@ -308,10 +308,17 @@ h1, h2, h3 {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateY(-10px);
 }
+
 .mobile-menu.show {
   display: flex;
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
+
+/* ✅ Sign Up button spacing */
+.mobile-menu a[href="/signup"] {
+  margin-top: 0.5rem;
+}
+
 
