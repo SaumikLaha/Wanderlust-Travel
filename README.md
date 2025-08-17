@@ -82,8 +82,6 @@ This project is built with a scalable MVC architecture and is fully deployed on 
 ---
 
 ## ⚡ Installation & Setup
-
-```bash
 # 1️⃣ Clone repository
 git clone https://github.com/SaumikLaha/Wanderlust-Travel
 
@@ -95,7 +93,9 @@ npm install
 
 # 4️⃣ Add environment variables
 touch .env
+---
 
+🔑 Environment Variables
 # MongoDB Atlas Connection
 ATLASDB_URL=your_mongodb_uri
 
@@ -109,7 +109,9 @@ MAPBOX_TOKEN=your_mapbox_token
 
 # Session Secret
 SECRET=your_session_secret
+---
 
+▶️ Run the Project
 # Start server
 node app.js
 
@@ -117,14 +119,7 @@ node app.js
 nodemon app.js
 ---
 
-## 🔗 Links
-
-- 🌐 **Live Demo:** [wanderlust-travel-kq1k.onrender.com/listings](https://wanderlust-travel-kq1k.onrender.com/listings)  
-- 📂 **GitHub Repo:** [github.com/SaumikLaha/Wanderlust-Travel](https://github.com/SaumikLaha/Wanderlust-Travel)
-
+👨‍💻 Author
+Saumik Laha
 ---
 
-## ✨ Author
-
-**Saumik Laha**  
-🔗 [GitHub Profile](https://github.com/SaumikLaha)
