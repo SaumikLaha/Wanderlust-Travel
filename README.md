@@ -115,24 +115,25 @@ MAPBOX_TOKEN=your_mapbox_token
 
 # Session Secret
 SECRET=your_session_secret
+
 # Start server
 node app.js
 
 # OR for development
 nodemon app.js
 
----
-
-🔗 Links
-
-- **Live Demo:** https://wanderlust-travel-kq1k.onrender.com/listings  
-- **GitHub Repo:** https://github.com/SaumikLaha/Wanderlust-Travel
 
 ---
 
-✨ Author
+## 🔗 Links
+🌐 Live Demo: [wanderlust-travel-kq1k.onrender.com/listings](https://wanderlust-travel-kq1k.onrender.com/listings)
+
+📂 GitHub Repo: [github.com/SaumikLaha/Wanderlust-Travel](https://github.com/SaumikLaha/Wanderlust-Travel)
+
+---
+
+## ✨ Author
 
 **Saumik Laha**  
-[GitHub](https://github.com/SaumikLaha)
-
+🔗 [GitHub Profile](https://github.com/SaumikLaha)
 ---
