@@ -20,7 +20,7 @@ A Full-Stack Travel & Stay Platform inspired by Airbnb.
 
 ## 📌 Description
 
-**WonderLust** is a complete travel booking web application where users can:
+**WonderLust** is a full-stack web application inspired by Airbnb.
 
 - 🏡 Explore beautiful listings across different categories  
 - 📍 View properties with interactive maps (MapBox integration)  
@@ -41,7 +41,7 @@ This project is built with a scalable MVC architecture and is fully deployed on 
 - 🗺️ MapBox Integration – Interactive maps for locations  
 - 📂 Category Filters – Easily explore by type/location  
 - ⭐ Reviews & Ratings – Leave feedback on listings  
-- 📅 Booking System – Check availability & book instantly  
+- ⭐ Flash messages & form validation 
 - 📱 Responsive UI – Mobile-first and user-friendly  
 
 ---
