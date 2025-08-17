@@ -52,6 +52,9 @@ This project is built with a scalable MVC architecture and is fully deployed on 
 
 📱 Responsive UI – Mobile-first and user-friendly
 
+---
+
+## 🛠 Tech Stack 
 | Layer          | Technologies Used            |
 | -------------- | ---------------------------- |
 | **Frontend**   | HTML5, CSS3, JavaScript, EJS |
@@ -118,11 +121,14 @@ node app.js
 # OR for development
 nodemon app.js
 
-🔗 Links  
-- 🌍 [Live Demo](https://wanderlust-travel-kq1k.onrender.com/listings)  
-- 📂 [GitHub Repo](https://github.com/SaumikLaha/Wanderlust-Travel)
+---
 
-✨ Author  
-👨‍💻 **Saumik Laha**  
-🔗 [GitHub](https://github.com/SaumikLaha)
+🔗 Links
+Live Demo: https://wanderlust-travel-kq1k.onrender.com/listings
 
+GitHub Repo: https://github.com/SaumikLaha/Wanderlust-Travel
+
+✨ Author
+👨‍💻 Saumik Laha GitHub: https://github.com/SaumikLaha
+
+---
