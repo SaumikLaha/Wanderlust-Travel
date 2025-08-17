@@ -81,24 +81,24 @@ This project is built with a scalable MVC architecture and is fully deployed on 
 
 ---
 
-⚡ Installation
-# Clone
-git clone https://github.com/SaumikLaha/Wanderlust-Travel
-cd Wanderlust-Travel
-npm install
+## ⚡ Installation
 
-# .env example
-ATLASDB_URL=your_mongodb_uri
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-MAPBOX_TOKEN=your_mapbox_token
-SECRET=your_session_secret
+Clone  
+`git clone https://github.com/SaumikLaha/Wanderlust-Travel`  
+`cd Wanderlust-Travel`  
+`npm install`
 
-# Run
-node app.js   # or nodemon app.js
+.env example  
+`ATLASDB_URL=your_mongodb_uri`  
+`CLOUDINARY_CLOUD_NAME=your_cloud_name`  
+`CLOUDINARY_API_KEY=your_api_key`  
+`CLOUDINARY_API_SECRET=your_api_secret`  
+`MAPBOX_TOKEN=your_mapbox_token`  
+`SECRET=your_session_secret`
 
-👨‍💻 Author
-Saumik Laha
+Run  
+`node app.js`   &nbsp;&nbsp;_or_ &nbsp;&nbsp;`nodemon app.js`
+
+## 👨‍💻 Author  
+**Saumik Laha**
 ---
-
