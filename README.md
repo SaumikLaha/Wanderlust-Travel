@@ -1,4 +1,3 @@
-
 # 🌍 WonderLust 🏡  
 A Full-Stack Travel & Stay Platform inspired by Airbnb.
 
@@ -10,18 +9,19 @@ A Full-Stack Travel & Stay Platform inspired by Airbnb.
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![EJS](https://img.shields.io/badge/EJS-8C8C8C?style=for-the-badge&logo=javascript&logoColor=white)
 
+---
+
+## 🚀 Live Demo
+
+- 🌐 [Live Project Link](https://wanderlust-travel-kq1k.onrender.com/listings)  
+- 📂 [GitHub Repository](https://github.com/SaumikLaha/Wanderlust-Travel)
 
 ---
 
-## 🚀 Live Demo  
-🔗 [Live Project Link](https://wanderlust-travel-kq1k.onrender.com/listings)  
-🔗 [GitHub Repository](https://github.com/SaumikLaha/Wanderlust-Travel)
+## 📌 Description
 
----
-
-## 📌 Description  
 **WonderLust** is a complete travel booking web application where users can:
-- 🏡 A Full-Stack Travel & Stay Platform inspired by Airbnb.
+
 - 🏡 Explore beautiful listings across different categories  
 - 📍 View properties with interactive maps (MapBox integration)  
 - ✍️ Manage their own listings (Add, Edit, Delete)  
@@ -32,29 +32,22 @@ This project is built with a scalable MVC architecture and is fully deployed on 
 
 ---
 
-⚙️ Features
+## ⚙️ Features
 
-🔐 Authentication – Secure Login, Signup, Logout with Passport.js
-
-🔑 Password Security – Bcrypt-based hashing
-
-🏡 Property Listings – Add, Edit, Delete listings
-
-🖼️ Cloudinary Uploads – Store property images safely
-
-🗺️ MapBox Integration – Interactive maps for locations
-
-📂 Category Filters – Easily explore by type/location
-
-⭐ Reviews & Ratings – Leave feedback on listings
-
-📅 Booking System – Check availability & book instantly
-
-📱 Responsive UI – Mobile-first and user-friendly
+- 🔐 Authentication – Secure Login, Signup, Logout with Passport.js  
+- 🔑 Password Security – Bcrypt-based hashing  
+- 🏡 Property Listings – Add, Edit, Delete listings  
+- 🖼️ Cloudinary Uploads – Store property images safely  
+- 🗺️ MapBox Integration – Interactive maps for locations  
+- 📂 Category Filters – Easily explore by type/location  
+- ⭐ Reviews & Ratings – Leave feedback on listings  
+- 📅 Booking System – Check availability & book instantly  
+- 📱 Responsive UI – Mobile-first and user-friendly  
 
 ---
 
-## 🛠 Tech Stack 
+## 🛠 Tech Stack
+
 | Layer          | Technologies Used            |
 | -------------- | ---------------------------- |
 | **Frontend**   | HTML5, CSS3, JavaScript, EJS |
@@ -66,7 +59,7 @@ This project is built with a scalable MVC architecture and is fully deployed on 
 
 ---
 
-## 📷 Screenshots  
+## 📷 Screenshots
 
 ### 1️⃣ Home Page  
 ![Home](screenshots/home.png)
@@ -88,7 +81,7 @@ This project is built with a scalable MVC architecture and is fully deployed on 
 
 ---
 
-## ⚡ Installation & Setup  
+## ⚡ Installation & Setup
 
 ```bash
 # 1️⃣ Clone repository
@@ -102,6 +95,7 @@ npm install
 
 # 4️⃣ Add environment variables
 touch .env
+
 # MongoDB Atlas Connection
 ATLASDB_URL=your_mongodb_uri
 
@@ -121,14 +115,12 @@ node app.js
 
 # OR for development
 nodemon app.js
-
-
 ---
 
 ## 🔗 Links
-🌐 Live Demo: [wanderlust-travel-kq1k.onrender.com/listings](https://wanderlust-travel-kq1k.onrender.com/listings)
 
-📂 GitHub Repo: [github.com/SaumikLaha/Wanderlust-Travel](https://github.com/SaumikLaha/Wanderlust-Travel)
+- 🌐 **Live Demo:** [wanderlust-travel-kq1k.onrender.com/listings](https://wanderlust-travel-kq1k.onrender.com/listings)  
+- 📂 **GitHub Repo:** [github.com/SaumikLaha/Wanderlust-Travel](https://github.com/SaumikLaha/Wanderlust-Travel)
 
 ---
 
@@ -136,4 +128,3 @@ nodemon app.js
 
 **Saumik Laha**  
 🔗 [GitHub Profile](https://github.com/SaumikLaha)
----
