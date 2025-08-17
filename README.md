@@ -123,14 +123,14 @@ nodemon app.js
 
 ---
 
-## 🔗 Links
+🔗 Links
 
 - **Live Demo:** https://wanderlust-travel-kq1k.onrender.com/listings  
 - **GitHub Repo:** https://github.com/SaumikLaha/Wanderlust-Travel
 
 ---
 
-## ✨ Author
+✨ Author
 
 **Saumik Laha**  
 [GitHub](https://github.com/SaumikLaha)
