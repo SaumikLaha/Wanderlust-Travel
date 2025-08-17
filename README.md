@@ -81,31 +81,39 @@ This project is built with a scalable MVC architecture and is fully deployed on 
 
 ---
 
-## ⚡ Installation & Setup
+⚡ Installation
+# 1️⃣ Clone repository
+git clone https://github.com/SaumikLaha/Wanderlust-Travel
 
-# Clone repository
-git clone https://github.com/SaumikLaha/Wanderlust-Travel.git
-
-# Go to project folder
+# 2️⃣ Go to project folder
 cd Wanderlust-Travel
 
-# Install dependencies
+# 3️⃣ Install dependencies
 npm install
 
-# Add your environment variables (.env)
-# Example:
-# ATLASDB_URL=your_mongodb_uri
-# CLOUDINARY_CLOUD_NAME=your_cloud_name
-# CLOUDINARY_API_KEY=your_api_key
-# CLOUDINARY_API_SECRET=your_api_secret
-# MAPBOX_TOKEN=your_mapbox_token
-# SECRET=your_session_secret
+# 4️⃣ Add environment variables
+touch .env
 
-# Run server
-node app.js   # or nodemon app.js
+# MongoDB Atlas Connection
+ATLASDB_URL=your_mongodb_uri
 
+# Cloudinary Credentials
+CLOUDINARY_CLOUD_NAME=your_cloud_name  
+CLOUDINARY_API_KEY=your_api_key  
+CLOUDINARY_API_SECRET=your_api_secret
 
+# MapBox Token
+MAPBOX_TOKEN=your_mapbox_token
 
+# Session Secret
+SECRET=your_session_secret
+
+# 5️⃣ Start server
+node app.js
+
+# OR for development
+nodemon app.js
+---
 👨‍💻 Author
 Saumik Laha
 ---
